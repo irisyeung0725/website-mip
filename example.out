@@ -1,0 +1,10 @@
+Local date and time is: Tue Mar 24 00:29:05 2020 
+
+Finding 3 diverse and high-quality solutions to example.lp
+Original model direction is MAXIMIZATION
+Diversity metric is to maximize distance from centroid
+
+No(k)	Iterations	OptObjVal	GapOffOptimal	DiversityMeasure	Solution
+
+  0	         0	1.0000000000	0.0000000000	0.0000000000	1	0	0	
+All feasible solutions have been identified. Present model is infeasible.All feasible solutions have been identified. Present model is infeasible.All feasible solutions have been identified. Present model is infeasible.

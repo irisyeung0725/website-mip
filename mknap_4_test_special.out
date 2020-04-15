@@ -1,0 +1,11 @@
+Local date and time is: 04/05/2020 01:30:06 
+
+Finding 2 diverse and high-quality solutions to /Users/cassie/Dropbox/Course Improvement/Shijing_Yang/mknap_1_through_7/mknap_4.lp
+Original objective function direction is MAXIMIZATION
+Diversity metric is to maximize distance from centroid
+
+No(k)   Iterations        OptObjVal   GapOffOptimal   DiversityMeasure       Solution
+
+N/A          N/A        6120.00000         0                  0              10000000010001111111
+  1            6        6110.00000        10.00000            3.00000        11100000010001101111
+  2            2        6100.00000        20.00000            4.50000        10000100100001111111

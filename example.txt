@@ -1,0 +1,12 @@
+Local date and time is: 03/31/2020 23:14:50 
+
+Finding 3 diverse and high-quality solutions to example.lp
+Original objective function direction is MAXIMIZATION
+Diversity metric is to maximize distance from centroid
+
+No(k)   Iterations        OptObjVal   GapOffOptimal   DiversityMeasure       Solution
+
+N/A          N/A           1.00000         0                  0              100
+  1            1           4.00000        -3.00000            0.00000        100
+  2            1           4.00000        -3.00000            0.00000        100
+  3            1           4.00000        -3.00000            0.00000        100

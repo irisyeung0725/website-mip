@@ -1,0 +1,9 @@
+Local date and time is: 03/31/2020 22:46:44 
+
+Finding 3 diverse and high-quality solutions to mip_mip1.lp
+Original objective function direction is MINIMIZATION
+Diversity metric is to maximize distance from centroid
+
+No(k)   Iterations        OptObjVal   GapOffOptimal   DiversityMeasure       Solution
+
+N/A          N/A          -3.00000         0                  0              101

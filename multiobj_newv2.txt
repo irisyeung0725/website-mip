@@ -1,0 +1,8 @@
+Local date and time is: 04/02/2020 03:51:02 
+
+Finding 3 diverse and high-quality solutions to multiobj.lp
+Original objective function direction is MINIMIZATION
+Diversity metric is to maximize distance from centroid
+
+No(k)   Iterations        OptObjVal   GapOffOptimal   DiversityMeasure       Solution
+
