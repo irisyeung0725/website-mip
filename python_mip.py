@@ -23,22 +23,22 @@ from mip import *
 
 ## --------------------------------------------------------------- ##
 # build my own example "MIP1"
-# m = Model("python_mip1",sense=MAXIMIZE,solver_name=CBC)
+m = Model("python_mip1",sense=MINIMIZE,solver_name=CBC)
 
-# x = m.add_var("x",var_type=BINARY)
-# y = m.add_var("y",var_type=BINARY)
-# z = m.add_var("z",var_type=BINARY)
+x = m.add_var("x",var_type=BINARY)
+y = m.add_var("y",var_type=BINARY)
+z = m.add_var("z",var_type=BINARY)
 
-# m.objective = x + y + 2*z
-# m.add_constr(x + 2 * y + 3 * z <= 4 ,"c0")
-# m.add_constr(x + y >= 1 ,"c1")
-# m.write("mip_mip1.lp")
-# m.optimize()
-# print('model has {} vars, {} constraints and {} nzs'.format(m.num_cols, m.num_rows, m.num_nz))
-# print(m.objective_value)
-# for v in m.vars:
-#     # if abs(v.x) > 1e-6: # only printing non-zeros
-#     print('{} : {}'.format(v.name, v.x))
+m.objective = x + y + 2*z
+m.add_constr(x + 2 * y + 3 * z <= 4 ,"c0")
+m.add_constr(x + y >= 1 ,"c1")
+m.write("mip_mip1_minimize.lp")
+m.optimize()
+print('model has {} vars, {} constraints and {} nzs'.format(m.num_cols, m.num_rows, m.num_nz))
+print(m.objective_value)
+for v in m.vars:
+    # if abs(v.x) > 1e-6: # only printing non-zeros
+    print('{} : {}'.format(v.name, v.x))
 # print(m.sense)
 ## --------------------------------------------------------------- ##
 # read an imported .lp model
@@ -68,13 +68,13 @@ from mip import *
 # import os
 # from datetime import datetime
 # input_file_path = "/Users/cassie/Dropbox/GA/Website/mip_mip1.lp"
-# input_file = input_file_path.split("/")[-1]
+# input_file = "mip_mip1.lp"
 # output_file_path = "/Users/cassie/Dropbox/GA/Website"
 # output_file = input_file.split(".")[0]
 # # k = input("Input k:")
 # m = Model(solver_name=CBC)
 # m.read(input_file)
-# m.objective.add_const(3)
+# # m.objective.add_const(3)
 
 # m.optimize()
 # for v in m.vars:
@@ -82,6 +82,7 @@ from mip import *
 #     print('{} : {}'.format(v.name, v.x))
 
 # print(m.objective_value)
+# print(len(m.vars))
 # opt_val = m.objective_value
 # number_of_vars = len(m.vars)
 # org_model_sense = m.sense

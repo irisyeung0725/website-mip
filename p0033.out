@@ -1,10 +1,19 @@
-Local date and time is: Tue Mar 24 00:08:56 2020 
+Local date and time is: 05/04/2020 17:13:19 
 
-Finding 3 diverse and high-quality solutions to p0033.lp
-Original model direction is MINIMIZATION
+Finding 10 diverse and high-quality solutions to p0033.lp
+Original objective function direction is MINIMIZATION
 Diversity metric is to maximize distance from centroid
 
-No(k)	Iterations	OptObjVal	GapOffOptimal	DiversityMeasure	Solution
+No(k)   Iterations        OptObjVal   GapOffOptimal   DiversityMeasure       Solution
 
-  0	         0	0.0000000000	0.0000000000	0.0000000000	
-All feasible solutions have been identified. Present model is infeasible.The search was prematurely terminated, because the time limit has been exceeded.
+N/A          N/A        3089.00000         0                  0              100000110100010000110101111111000
+  1            1        3089.00000         0.00000            0.00000        100000010000010111001101111111011
+  2            1        2183.00000         0.29330            5.00000        100000110100010100110101111111000
+  3            1        2831.00000         0.08352            3.33333        100000110000010100110101111111000
+  4            1        3014.00000         0.02428            2.75000        100000110100010100110111011111000
+  5            1        2831.00000         0.08352            3.80000        100000010010010100101010111111011
+  6            1        2267.00000         0.26611            7.83333        100000010000010100110101111111001
+  7            1        2859.00000         0.07446            3.85714        100000010000010100110111011111001
+  8            1        2859.00000         0.07446            4.37500        100000010000010100110101111111011
+  9            1        2700.00000         0.12593            3.66667        100000110000010100110101111111011
+ 10            1        2537.00000         0.17870            3.40000        100000110000010100110101111111001

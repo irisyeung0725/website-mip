@@ -37,9 +37,9 @@ if (input_file_name.split('.')[-1])!="lp" and (input_file_name.split('.')[-1])!=
     f.close()
     quit()
 
-##-- add this is line to handle "obj:" without space to avoid potential conflicts from cbc solver
+# ##-- add this is line to handle "obj:" without space to avoid potential conflicts from cbc solver
 for line in fileinput.input(input_file, inplace=1):
-        sys.stdout.write(line.replace('obj:', ' '))
+    sys.stdout.write(line.replace('obj:', ' '))
 ##-- claim cbc solver 
 m = Model(solver_name=CBC)
 ##-- read input file
@@ -62,8 +62,9 @@ def AlgorithmII():
     c={}
     s={}
     q={}
+    # do = float(2)
     epsilon=1e-6
-
+    # num_binary_vars = 0 
     ##-- obtain information from the original model
     opt_val = m.objective_value # get objective value
     number_of_vars = len(m.vars) # get number of vars
@@ -75,7 +76,7 @@ def AlgorithmII():
         direction = "MAXIMIZATION"
     else:
         direction = "MINIMIZATION"
-    m.sense = "MAX" # set model sense back to maximization
+    # m.sense = "MAX" # set model sense back to maximization
     for i in range(number_of_vars):
         X[l,i] = m.vars[i].x
     ##-- start creating output text file that contains basic information about the orginal model
@@ -90,6 +91,10 @@ def AlgorithmII():
 	    f.write("%.0f" %abs(X[l,i])) 
     f.write ("\n")
 
+    # for i in range(number_of_vars):
+    #     if (m.vars[i].var_type == "B") or (m.vars[i].var_type == "I"):
+    #         number_of_vars +=1
+
     ##-- build and solve Max_D(x) --> z* - Cx maximization and Cx - z* for minimization
     Dx_func = LinExpr()
     if org_model_sense == "MAX":
@@ -98,11 +103,11 @@ def AlgorithmII():
         Dx_func_const = opt_val
     else:
         for i in range(number_of_vars):
-            Dx_func.add_term(m.vars[i],org_obj_func_coeffs[i])
+            Dx_func.add_term(m.vars[i],coeff =1*org_obj_func_coeffs[i])
         Dx_func_const = -1*opt_val
     Dx_func.add_const(Dx_func_const) # add constant
 
-    m.objective = Dx_func
+    m.objective = maximize(Dx_func)
     m.optimize() # optimize the model again
 
     ##-- check and terminate if new model is infeasible
@@ -200,12 +205,21 @@ def AlgorithmII():
             
             m.optimize() # optimize the model 
 
+            # calculate DiversityMeasure
+            # Dbin_ = float(0)
+            # for i in range(number_of_vars):
+            #     if (m.vars[i].var_type == "B") or (m.vars[i].var_type =="I"):
+            #         for j in range(l):
+            #             for w in range(j+1, l+1):
+            #                 Dbin_ += abs(X[j,i]-X[w,i])
+            # Dbin = Dbin_ * do / (num_binary_vars*(l+1)*l)
+
             # check if max value for F*N(x) - Landa*D(x) == Zero
             # if YES then this is new diverse optimal solution
             if (-0.001 <= m.objective_value <= 0.001):
                 for i in range(number_of_vars):
                     X[l,i] = m.vars[i].x
-                f.write ("%3d          %3d        %10.5f      %10.5f         %10.5f        " %(l,counter,abs(opt_val - Dx_value),Dx_value,Nx_value))
+                f.write ("%3d          %3d        %10.5f      %10.5f         %10.5f        " %(l,counter,abs(opt_val - Dx_value),abs(Dx_value/(epsilon+opt_val)),Nx_value))
                 for i in range(number_of_vars):
                     f.write("%.0f" %abs(X[l,i])) 
                 f.write ("\n")

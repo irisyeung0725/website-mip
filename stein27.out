@@ -1,9 +1,19 @@
-Local date and time is: 04/14/2020 21:01:56 
+Local date and time is: 05/04/2020 17:16:09 
 
-Finding 3 diverse and high-quality solutions to /Users/cassie/Dropbox/GA/Website/stein27.mps
+Finding 10 diverse and high-quality solutions to stein27.mps
 Original objective function direction is MINIMIZATION
 Diversity metric is to maximize distance from centroid
 
 No(k)   Iterations        OptObjVal   GapOffOptimal   DiversityMeasure       Solution
 
-N/A          N/A          18.00000         0                  0              010010111111111110001011110
+N/A          N/A          18.00000         0                  0              000111011111011111111100100
+  1            2          18.00000         0.00000           18.00000        111100100000111011111011111
+  2            2          18.00000         0.00000           18.00000        111011111111100100000111011
+  3            1          18.00000         0.00000           12.00000        111101111101010110100100111
+  4            2          18.00000         0.00000           13.50000        010011110110111111111011000
+  5            2          18.00000         0.00000           14.40000        101110001011101001011111111
+  6            1          18.00000         0.00000           12.00000        010110101111111110101001011
+  7            2          18.00000         0.00000           12.85714        111111110101001011010110101
+  8            2          18.00000         0.00000           13.50000        101001011010110101111111110
+  9            1          18.00000         0.00000           12.00000        000111101111111011001101011
+ 10            2          18.00000         0.00000           12.60000        111101111110100101110011100

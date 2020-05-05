@@ -25,7 +25,7 @@ l = 0
 		
 # 	quit()
 
-input_file_path = "/Users/cassie/Dropbox/GA/Website/stein27.mps"
+input_file_path = "/Users/cassie/Dropbox/GA/Website/p0033.lp"
 input_file = input_file_path.split("/")[-1]
 output_file_path = "/Users/cassie/Dropbox/GA/Website"
 output_file = input_file.split(".")[0]

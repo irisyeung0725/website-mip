@@ -24,7 +24,7 @@ try:
     z = m.addVar(vtype=GRB.BINARY, name="z")
 
     # Set objective
-    m.setObjective(x + y + 2 * z, GRB.MAXIMIZE)
+    m.setObjective(x + y + 2 * z, GRB.MINIMIZE)
 
     # Add constraint: x + 2 y + 3 z <= 4
     m.addConstr(x + 2 * y + 3 * z <= 4, "c0")
@@ -34,6 +34,9 @@ try:
 
     # Optimize model
     m.optimize()
+
+    m.write("mip1_minimize.lp")
+
 
     for v in m.getVars():
         print('%s %g' % (v.varName, v.x))
